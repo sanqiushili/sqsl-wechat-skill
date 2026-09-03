@@ -37,6 +37,21 @@ npx -y skills add <your-github-username>/sqsl-skills/skills/sqsl-article-to-wech
 
 ---
 
+## 🙏 Acknowledgements & Inspirations
+
+The architectural design and aesthetic foundation of this project are deeply inspired by the following open-source creators:
+
+* **[dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill)**:
+  Special thanks to the dbs team for pioneering Agent skill engineering! SQSL Skills adopts dbskill's **Monorepo suite layout**, **`/sqsl` pre-task routing & post-task navigation pattern**, and multi-agent **`AGENTS.md` workbench specifications**.
+* **[Guizang (归藏)](https://github.com/op7418)**:
+  Heartfelt thanks to Guizang for exceptional contributions to WeChat Official Account visual narrative, social card design systems, and Swiss editorial aesthetics.
+
+### 🎨 Built-in Style Origins
+1. **`editorial` (SQSL Editorial)**: Inspired by *Nowre* and *GQ*, utilizing Didot/Songti watermark typography, 88% whitespace media containers, and deep midnight navy aesthetics.
+2. **`olive_artisan` (Olive Artisan)**: Reverse-engineered from *Voicer* magazine's acclaimed feature *[Revisiting Ayu: A Hat Maker and the Free Spirit in the Hills](https://mp.weixin.qq.com/s/2a85ue2uWT9JJpIcTqYYvA)*, recreating the signature Bodoni/Didot graphic numeral headers (`01`/`02`), olive-khaki highlighter tape titles (`#E0DEA8`), warm oat-beige card surfaces (`#F7F6F3`), and 1.8 relaxed line-height.
+
+---
+
 ## 📄 License
 
 MIT License.

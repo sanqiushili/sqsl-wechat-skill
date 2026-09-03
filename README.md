@@ -163,6 +163,24 @@ npx -y skills add <你的GitHub用户名>/sqsl-skills/skills/sqsl-article-to-wec
 
 ---
 
+## 🙏 致谢与灵感之源 (Acknowledgements & Inspirations)
+
+本项目的架构设计与排版美学深受开源社区与先锋创作者的启发，特别致敬与感谢：
+
+* **[dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill)**：
+  感谢 dbs 团队在 Agent 技能工程化上的开拓性实践！本项目在 **Monorepo 全家桶矩阵架构**、**`/sqsl` 任务前路由与任务后导航模式** 以及多端 **`AGENTS.md` 工作台规范** 上均深度借鉴了 dbskill 的优秀架构思想。
+* **[归藏 (Guizang)](https://github.com/op7418)**：
+  感谢归藏在微信公众号视觉叙事、社交图文卡片排版美学上的持续输出与设计启发，为本项目奠定了追求“大刊呼吸感、克制版式与高级质感”的美学标准。
+
+### 🎨 内置核心风格的灵感溯源
+
+1. **`editorial`（SQSL 先锋大刊风）**：
+   - 汲取自 *Nowre*、*GQ* 等潮流大刊，采用 Didot / 宋体水印标题图层、88% 留白图片容器与深邃墨蓝先锋质感；
+2. **`olive_artisan`（阿芋 · 草木山野生活大刊风）**：
+   - 逆向解构自 *Voicer* 杂志深度专访名篇[《重访阿芋：是制帽师，也是山野里的自在风》](https://mp.weixin.qq.com/s/2a85ue2uWT9JJpIcTqYYvA)，1:1 像素级还原了标志性的 Bodoni/Didot 粗斜体艺术大数字插图图层（`01`/`02`）、黄绿胶带高亮居中大标题（`#E0DEA8`）、温润燕麦米灰软卡片（`#F7F6F3`）以及极为松弛的 1.8 舒适行高与 1.5px 呼吸字距。
+
+---
+
 ## 📄 开源许可证
 
 本项目基于 [MIT License](LICENSE) 开源。欢迎 Star、Fork 与贡献你的精彩排版风格！
