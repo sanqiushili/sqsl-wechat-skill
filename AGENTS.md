@@ -1,6 +1,6 @@
-# 🤖 SQSL Skills Agent 工作台规范 (AGENTS.md)
+# 🤖 SQSL WeChat Skill Agent 工作台规范 (AGENTS.md)
 
-本文档定义了 **SQSL Skills** 在不同 AI Agent 宿主环境（Claude Code、Codex、Antigravity、Cursor 等）中的加载机制与协同行为准则。
+本文档定义了 **SQSL WeChat Skill** 在不同 AI Agent 宿主环境（Claude Code、Codex、Antigravity、Cursor 等）中的加载机制与协同行为准则。
 
 ---
 
@@ -10,7 +10,7 @@
 
 | 技能名称 | 目录位置 | 角色定位 |
 | :--- | :--- | :--- |
-| **`sqsl`** | `skills/sqsl/SKILL.md` | **总路由入口**：负责任务前路由与任务后导航 |
+| **`sqsl-wechat-start`** | `skills/sqsl-wechat-start/SKILL.md` | **总路由入口**：负责任务前路由与任务后导航（支持 `/sqsl` 简写） |
 | **`sqsl-article-to-wechat`** | `skills/sqsl-article-to-wechat/SKILL.md` | **排版发布引擎**：Markdown 转公众号 HTML 并直推草稿箱 |
 | **`sqsl-style-cloner`** | `skills/sqsl-style-cloner/SKILL.md` | **风格克隆工坊**：逆向解析微信文章并生成风格模块 |
 
@@ -20,7 +20,7 @@
 
 ### (1) Claude Code
 - 支持通过 `npx -y skills add <repo> -g --all` 安装到 `~/.claude/skills/`；
-- 触发方式：直接输入 `/sqsl` 或子技能命令。
+- 触发方式：输入 `/sqsl-wechat-start`（或简写 `/sqsl`）或对应子技能命令。
 
 ### (2) Google Antigravity
 - 技能目录同步至 `~/.gemini/config/skills/`；

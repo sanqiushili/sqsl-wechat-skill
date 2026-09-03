@@ -1,4 +1,4 @@
-# 🏛️ SQSL Skills (WeChat Official Account Creator Suite)
+# 🏛️ SQSL WeChat Skill (WeChat Official Account Creator Suite)
 
 <p align="center">
   <strong>An all-in-one Agent Skill Suite for WeChat Official Account creators: from Reverse-Engineering & Style Cloning to Editorial Typesetting and 1-Click Official Draft Push.</strong>
@@ -19,7 +19,7 @@
 
 1. **🎨 `sqsl-style-cloner` (Style Cloner Workshop)**: Reverse-engineers the visual DNA of any WeChat article URL (extracting stylized number images `01/02`, highlight tape background colors, soft paper cards, line spacing) and compiles into a plug-and-play Python style class.
 2. **📰 `sqsl-article-to-wechat` (Typesetter & Draft Publisher)**: Turns any Markdown file into high-aesthetic WeChat HTML, auto-extracts the first image as 900x383 header cover, uploads images to WeChat CDN, and pushes directly to your Official Account Draft Box.
-3. **🧭 `sqsl` (Master Router)**: A unified entry point (like `/dbs`) that automatically identifies user intent and routes between publishing, cloning, and setup guides.
+3. **🧭 `sqsl-wechat-start` (Master Router)**: A unified entry point (`/sqsl-wechat-start` or shorthand `/sqsl`) that automatically identifies user intent and routes between publishing, cloning, and setup guides.
 
 ---
 
@@ -29,10 +29,10 @@ Compatible with Claude Code, Codex, Antigravity, and any Agent supporting skills
 
 ```bash
 # Install the entire suite with all sub-skills
-npx -y skills add <your-github-username>/sqsl-skills -g --all
+npx -y skills add <your-github-username>/sqsl-wechat-skill -g --all
 
 # Or install only the typesetter
-npx -y skills add <your-github-username>/sqsl-skills/skills/sqsl-article-to-wechat -g
+npx -y skills add <your-github-username>/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 ```
 
 ---

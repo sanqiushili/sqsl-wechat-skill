@@ -1,4 +1,4 @@
-# 🏛️ SQSL Skills (三秋十李 · 微信公众号创作与排版全家桶)
+# 🏛️ SQSL WeChat Skill (三秋十李 · 微信公众号创作全家桶)
 
 <p align="center">
   <strong>专为微信公众号创作者打造的一站式 Agent 技能矩阵：从「大号风格逆向复刻」到「杂志大刊排版」再到「官方草稿箱直推」</strong>
@@ -18,14 +18,14 @@
 
 ---
 
-## 🌟 为什么选择 SQSL Skills 全家桶？
+## 🌟 为什么选择 SQSL WeChat Skill 全家桶？
 
 传统的微信公众号排版工具（微信自带编辑器、第三方排版网站）操作繁琐、格式经常错乱、难以批量自动化。
 
-**SQSL Skills** 将微信内容生产全流程拆解为标准化、可插拔的 Agent 技能矩阵：
+**SQSL WeChat Skill** 将微信内容生产全流程拆解为标准化、可插拔的 Agent 技能矩阵：
 1. **🎨 风格克隆工坊 (`sqsl-style-cloner`)**：只要你看到别人家公众号排版好看，发来链接，自动逆向解析其视觉 DNA（大标题艺术数字图片、胶带高亮底色、燕麦米灰卡片、字距呼吸感），生成可插拔风格；
 2. **📰 排版直推引擎 (`sqsl-article-to-wechat`)**：Markdown 文档一键渲染为高颜值内联 HTML，自动提取正文首图为 900×383 头条封面，插图自动转存微信官方 CDN，接口直推后台草稿箱，手机端一键审核群发；
-3. **🧭 智能总调度路由 (`sqsl`)**：类似 `/dbs`，一个统一入口，发文章自动排版，发链接自动克隆，说引导自动导航！
+3. **🧭 智能总调度路由 (`sqsl-wechat-start`)**：类似 `/dbs`，一个统一入口（`/sqsl-wechat-start` 或简写 `/sqsl`），发文章自动排版，发链接自动克隆，说引导自动导航！
 
 ---
 
@@ -34,13 +34,13 @@
 ```mermaid
 flowchart TD
     subgraph Client["用户与 Agent 交互层"]
-        Cmd1["/sqsl (总路由入口)"]
+        Cmd1["/sqsl-wechat-start (或简写 /sqsl)"]
         Cmd2["/sqsl-article-to-wechat (排版直推)"]
         Cmd3["/sqsl-style-cloner (风格克隆)"]
     end
 
     subgraph Suite["SQSL 技能矩阵 (Monorepo)"]
-        Router["skills/sqsl\n总路由器 (智能意图分流与状态导航)"]
+        Router["skills/sqsl-wechat-start\n总路由器 (智能意图分流与状态导航)"]
         
         subgraph Sub1["skills/sqsl-style-cloner (风格克隆工坊)"]
             Crawler["网页爬取与 DOM 提取"] --> Analyzer["视觉 DNA 逆向分析\n- 胶带高亮底色探测\n- 章节序号图片化 (01/02)\n- 零杂色渗透法则"]
@@ -69,7 +69,7 @@ flowchart TD
 ## 📦 目录结构 (Monorepo)
 
 ```text
-sqsl-skills/                                  # GitHub 唯一根仓库
+sqsl-wechat-skill/                            # GitHub 唯一根仓库
 ├── README.md                                 # 中文主说明文档
 ├── README.en.md                              # 英文主说明文档
 ├── VERSION                                   # 全局语义化版本号 (1.0.0)
@@ -80,7 +80,7 @@ sqsl-skills/                                  # GitHub 唯一根仓库
 ├── wechat_config.template.json               # 微信公众平台凭证模板
 │
 └── skills/                                   # 核心子技能目录
-    ├── sqsl/                                 # 1. 家族总路由 (/sqsl)
+    ├── sqsl-wechat-start/                    # 1. 家族总路由主技能 (/sqsl-wechat-start 或 /sqsl)
     │   └── SKILL.md
     │
     ├── sqsl-article-to-wechat/               # 2. 排版与微信草稿直推引擎
@@ -119,10 +119,10 @@ sqsl-skills/                                  # GitHub 唯一根仓库
 
 ```bash
 # 一键安装全家桶（包含总路由、排版发布、风格克隆）
-npx -y skills add <你的GitHub用户名>/sqsl-skills -g --all
+npx -y skills add <你的GitHub用户名>/sqsl-wechat-skill -g --all
 
 # 或按需单装其中一个子技能
-npx -y skills add <你的GitHub用户名>/sqsl-skills/skills/sqsl-article-to-wechat -g
+npx -y skills add <你的GitHub用户名>/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 ```
 
 ### 2. 配置微信公众平台凭证 (可选，免配置也能一键复制)
@@ -147,11 +147,12 @@ npx -y skills add <你的GitHub用户名>/sqsl-skills/skills/sqsl-article-to-wec
 
 * **总路由智能调度**：
   ```text
-  /sqsl 帮我排版这篇文稿并推送到公众号：docs/post.md
+  /sqsl-wechat-start 帮我排版这篇文稿并推送到公众号：docs/post.md
   ```
   ```text
-  /sqsl 帮我把这篇公众号的排版风格克隆下来：https://mp.weixin.qq.com/s/xxxxxxxxxxxx
+  /sqsl-wechat-start 帮我把这篇公众号的排版风格克隆下来：https://mp.weixin.qq.com/s/xxxxxxxxxxxx
   ```
+  *(注：主技能支持简写命令 `/sqsl` 或 `/sqsl-start`)*
 * **排版并直推草稿箱**：
   ```text
   /sqsl-article-to-wechat 用 olive_artisan 风格排版 docs/post.md
