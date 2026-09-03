@@ -50,6 +50,10 @@ The architectural design and aesthetic foundation of this project are deeply ins
 1. **`editorial` (SQSL Editorial)**: Inspired by *Nowre* and *GQ*, utilizing Didot/Songti watermark typography, 88% whitespace media containers, and deep midnight navy aesthetics.
 2. **`olive_artisan` (Olive Artisan)**: Reverse-engineered from *Voicer* magazine's acclaimed feature *[Revisiting Ayu: A Hat Maker and the Free Spirit in the Hills](https://mp.weixin.qq.com/s/2a85ue2uWT9JJpIcTqYYvA)*, recreating the signature Bodoni/Didot graphic numeral headers (`01`/`02`), olive-khaki highlighter tape titles (`#E0DEA8`), warm oat-beige card surfaces (`#F7F6F3`), and 1.8 relaxed line-height.
 
+> ⚠️ **Copyright & Takedown Notice**:  
+> The built-in and cloned styling presets in this repository are intended exclusively for personal learning, aesthetic design research, and non-commercial open-source exchange. All intellectual property rights belong to the original creators and respective publications.  
+> **If you are a copyright owner or publisher and feel that any preset or asset is inappropriate or infringes on your rights, please reach out via GitHub Issues, and we will promptly review and take down/remove the relevant styles immediately. Thank you for your support and understanding!**
+
 ---
 
 ## 📄 License
