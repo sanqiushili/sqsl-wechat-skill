@@ -105,13 +105,13 @@ flowchart TD
 
 #### (1) 仅生成排版 HTML 与预览页
 ```bash
-python3 /Users/liguiyu/.gemini/config/skills/sqsl-article-to-wechat/scripts/render_wechat_html.py "文章路径.md" --style editorial
+python3 scripts/render_wechat_html.py "文章路径.md" --style editorial
 ```
 *输出：`文章名_微信排版.html`（内联样式纯净版）和 `文章名_预览.html`（带一键复制按钮的浏览器预览版）。*
 
 #### (2) 直推微信草稿箱（自动提取首图作为封面）
 ```bash
-python3 /Users/liguiyu/.gemini/config/skills/sqsl-article-to-wechat/scripts/wechat_draft_publisher.py "文章名_微信排版.html" --title "文章标题"
+python3 scripts/wechat_draft_publisher.py "文章名_微信排版.html" --title "文章标题"
 ```
 *可选参数：*
 - `--cover "/path/to/custom_cover.png"`：手动指定封面（若不提供则自动提取正文首图）；
