@@ -119,10 +119,10 @@ sqsl-wechat-skill/                            # GitHub 唯一根仓库
 
 ```bash
 # 一键安装全家桶（包含总路由、排版发布、风格克隆）
-npx -y skills add <你的GitHub用户名>/sqsl-wechat-skill -g --all
+npx -y skills add sanqiushili/sqsl-wechat-skill -g --all
 
 # 或按需单装其中一个子技能
-npx -y skills add <你的GitHub用户名>/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
+npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 ```
 
 ### 2. 配置微信公众平台凭证 (可选，免配置也能一键复制)

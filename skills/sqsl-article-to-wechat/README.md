@@ -29,22 +29,15 @@
 在终端直接执行：
 
 ```bash
-npx -y skills add <你的GitHub用户名>/sqsl-article-to-wechat -g
+npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 ```
 
 安装后回到 Agent，输入 `/sqsl-article-to-wechat` 即可使用。
 
-### 2. Claude Code 插件市场安装
+### 2. Git 源码克隆安装
 
 ```bash
-claude plugin marketplace add <你的GitHub用户名>/sqsl-article-to-wechat
-claude plugin install sqsl-article-to-wechat
-```
-
-### 3. Git 源码克隆安装
-
-```bash
-git clone https://github.com/<你的GitHub用户名>/sqsl-article-to-wechat.git ~/.gemini/config/skills/sqsl-article-to-wechat
+git clone https://github.com/sanqiushili/sqsl-wechat-skill.git
 ```
 
 ### 4. 版本更新

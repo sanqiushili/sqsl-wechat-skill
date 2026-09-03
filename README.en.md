@@ -29,10 +29,10 @@ Compatible with Claude Code, Codex, Antigravity, and any Agent supporting skills
 
 ```bash
 # Install the entire suite with all sub-skills
-npx -y skills add <your-github-username>/sqsl-wechat-skill -g --all
+npx -y skills add sanqiushili/sqsl-wechat-skill -g --all
 
 # Or install only the typesetter
-npx -y skills add <your-github-username>/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
+npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 ```
 
 ---

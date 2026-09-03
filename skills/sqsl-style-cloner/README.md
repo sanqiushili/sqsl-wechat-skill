@@ -46,7 +46,7 @@ flowchart LR
 ### 1. 通过 `skills` 包管理器安装
 
 ```bash
-npx -y skills add <你的GitHub用户名>/sqsl-style-cloner -g
+npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-style-cloner -g
 ```
 
 ### 2. 在 AI Agent 中对话使用

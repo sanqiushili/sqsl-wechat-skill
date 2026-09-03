@@ -25,7 +25,7 @@
 ## ⚡ 1-Click Installation
 
 ```bash
-npx -y skills add <your-github-username>/sqsl-style-cloner -g
+npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-style-cloner -g
 ```
 
 ---

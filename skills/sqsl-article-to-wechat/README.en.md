@@ -30,20 +30,13 @@
 ### Recommended: Via `skills` Package Manager (Claude Code, Codex, Antigravity, etc.)
 
 ```bash
-npx -y skills add <your-github-username>/sqsl-article-to-wechat -g
-```
-
-### Claude Code Plugin Installation
-
-```bash
-claude plugin marketplace add <your-github-username>/sqsl-article-to-wechat
-claude plugin install sqsl-article-to-wechat
+npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 ```
 
 ### Direct Git Clone
 
 ```bash
-git clone https://github.com/<your-github-username>/sqsl-article-to-wechat.git ~/.gemini/config/skills/sqsl-article-to-wechat
+git clone https://github.com/sanqiushili/sqsl-wechat-skill.git
 ```
 
 ---
