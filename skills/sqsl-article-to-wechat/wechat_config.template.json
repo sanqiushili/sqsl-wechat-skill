@@ -1,0 +1,5 @@
+{
+  "app_id": "",
+  "app_secret": "",
+  "note": "将此文件重命名为 wechat_config.json 并填入微信公众平台 [开发 -> 基本配置] 中的 AppID 与 AppSecret 即可启用草稿箱自动推送。"
+}

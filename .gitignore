@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+wechat_config.json
+output/
+tmp/
+/tmp/
+
+.DS_Store
+.vscode/
+.idea/

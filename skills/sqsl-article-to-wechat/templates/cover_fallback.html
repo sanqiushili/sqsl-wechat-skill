@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>文章封面</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    width: 900px;
+    height: 383px;
+    background: linear-gradient(135deg, #08285E 0%, #1E3A8A 50%, #0F172A 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: "Songti SC", "Noto Serif CJK SC", "PingFang SC", sans-serif;
+    box-sizing: border-box;
+    padding: 40px;
+    text-align: center;
+  }
+  .badge {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #F59E0B;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 2px;
+    max-width: 800px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+  <div class="badge">精选图文</div>
+  <div class="title">{{TITLE}}</div>
+</body>
+</html>

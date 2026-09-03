@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+output/
+tmp/
+/tmp/
+*.html
+!templates/*.html
+!examples/*.html
+
+.DS_Store
+.vscode/
+.idea/

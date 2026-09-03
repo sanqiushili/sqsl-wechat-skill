@@ -1,0 +1,26 @@
+# 微信公众号敏感凭证（严禁提交到 GitHub！）
+wechat_config.json
+.env
+.env.local
+
+# Python 缓存与中间文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 临时生成文件与排版产物
+*_微信排版.html
+*_预览.html
+/tmp/
+tmp/
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# 系统与 IDE 文件
+.DS_Store
+.vscode/
+.idea/
