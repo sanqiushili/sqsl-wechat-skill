@@ -92,9 +92,9 @@ This project adopts a **Dual-License Model (Free for Typesetting & Publishing / 
 ### 1. ✍️ Free for Article Typesetting & Publishing
 - **100% Free**: Whether you are an individual creator, blogger, academic, or enterprise/institution, you can freely use this tool for daily WeChat article typesetting, style rendering, and draft pushing without any charge.
 
-### 2. 🏢 Commercial Definition & Product Integration
-- **Scope of Commercial Use**: Strictly defined as packaging or integrating the typesetting engine, style classes, or skill suite into commercial SaaS platforms, commercial APPs, paid mini-programs, or commercial software tools.
-- Any commercial product integration requires prior written commercial licensing from the author.
+### 2. 🏢 Commercial Definition & Style Copyright Disclaimer
+- **Engine & Pipeline Integration**: Packaging or integrating the typesetting engine, parsing scripts, or skill suite into commercial SaaS platforms, commercial APPs, paid mini-programs, or commercial tools requires a formal commercial license from the author;
+- **⚠️ Style Copyright Disclaimer for Commercial Integration**: The built-in reference styles (such as `editorial` and `olive_artisan` inspired by external editorial features) are strictly intended for open-source research and non-commercial community typesetting. **They are NOT licensed for commercial bundling or resale under any circumstances.** Commercial products requiring visual themes must commission newly bespoke designed styles for the commercial entity to guarantee zero IP and copyright infringement risks.
 
 ### 3. 🎨 Bespoke Brand Customization & Services
 For brands and organizations requiring tailored visual design and pipeline engineering:
