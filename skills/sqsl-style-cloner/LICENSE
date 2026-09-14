@@ -1,17 +1,40 @@
-MIT License
+SQSL Source-Available License (Personal Free & Commercial License Agreement)
 
-Copyright (c) 2026 SQSL
+Copyright (c) 2026 SQSL (三秋十李)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+================================================================================
+1. 文章排版与内容发布许可 (Free for Typesetting & Publishing)
+================================================================================
+本项目对所有用户（包括个人创作者、自媒体博主、学者、非盈利机构及企事业单位）完全免费开放：
+- 允许免费使用本工具进行日常微信公众号文章的排版渲染、样式生成与草稿推送；
+- 用户使用本工具排版生成的内容版权归用户自身所有，可自由分发并发布；
+- 欢迎在开源社区交流分享，并保留本软件的原作者版权声明。
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+================================================================================
+2. 商业产品集成与商业使用界定 (Commercial Definition & License)
+================================================================================
+若您或您的团队计划将本软件用于商业化产品集成，包括但不限于：
+1. 将本软件的排版引擎、核心风格类代码或 Skill 整体打包集成至商业化 SaaS 平台；
+2. 集成至对外销售或收费的商业 APP、商业客户端或收费小程序中；
+3. 基于本项目核心代码开发同类商业收费服务或付费工具软件；
 
+以上商业产品集成场景**必须获得原作者的书面商业授权**。
+
+================================================================================
+3. 品牌专属定制与技术支持服务 (Bespoke Brand Customization & Services)
+================================================================================
+面向有更高审美追求与工程化效率需求的企业与品牌团队，我们提供官方定制服务：
+- 🎨 **品牌专属视觉设计**：定制专属设计品牌色卡和字体排印系统；
+- 🛠️ **专属排版组件开发**：特殊数据表格、SVG 动态交互卡片、专属品牌水印组件研发；
+- 🚀 **自动化流水线私有化交付**：对接飞书文档、语雀、Notion 等知识库，实现跨平台自动化排版直推公众号。
+
+商业授权、品牌定制咨询与合作联系：
+- 官方联系邮箱：leeguiyu@qq.com
+- GitHub Issues：https://github.com/sanqiushili/sqsl-wechat-skill/issues
+
+================================================================================
+4. 免责声明 (Disclaimer)
+================================================================================
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

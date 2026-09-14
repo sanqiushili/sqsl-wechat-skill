@@ -3,7 +3,7 @@
 render_wechat_html.py - sqsl-article-to-wechat 通用多风格微信公众号排版引擎
 
 特性：
-1. 多风格架构（Multi-Style Registry）：支持 --style editorial（先锋大刊风，默认）、minimal（极简现代风）等，可无缝扩充新风格。
+1. 多风格架构（Multi-Style Registry）：支持 --style editorial（先锋大刊风，默认）、olive_artisan（阿芋·草木山野生活大刊风），支持动态扩充新风格。
 2. 全面 Markdown 语法支持：支持标题、代码块、表格、Quote 引言卡、列表、行内标注 (==高亮==, `code`, **加粗**) 等。
 3. 首图识别与提取：自动提取正文首张图片，供封面图提取模块使用。
 4. 微信内联样式生成与一键复制预览页：完全免疫微信格式过滤，浏览器端一键复制。
@@ -276,7 +276,7 @@ class BaseStyle:
 
 class EditorialStyle(BaseStyle):
     name = "editorial"
-    display_name = "SQSL Editorial 杂志大刊风"
+    display_name = "Editorial 先锋大刊风"
 
     def render_h2(self, idx, text):
         num_str = f"{idx:02d}"
@@ -308,42 +308,15 @@ class EditorialStyle(BaseStyle):
   </section>{caption_html}"""
 
 
-class MinimalStyle(BaseStyle):
-    name = "minimal"
-    display_name = "极简现代商务风"
-
-    def render_h1(self, title, tag=""):
-        return f"""
-  <!-- 极简主标题 -->
-  <section style="padding:24px 22px 14px;text-align:left;border-bottom:2px solid #0F172A;margin-bottom:24px;box-sizing:border-box;">
-    {f'<p style="font-size:11px;font-weight:700;color:#2563EB;letter-spacing:2px;margin:0 0 8px;text-transform:uppercase;">{tag}</p>' if tag else ''}
-    <p style="font-size:22px;font-weight:800;line-height:1.35;color:#0F172A;margin:0;letter-spacing:0.5px;">{title}</p>
-  </section>"""
-
-    def render_h2(self, idx, text):
-        num_str = f"{idx:02d}"
-        return f"""
-  <!-- 极简章节标题 -->
-  <section style="margin:30px 22px 12px;display:flex;align-items:center;gap:10px;box-sizing:border-box;">
-    <p style="font-size:18px;font-weight:800;color:#0F172A;margin:0;padding-left:10px;border-left:4px solid #2563EB;">
-      <span style="color:#2563EB;margin-right:6px;">{num_str}</span>{text}
-    </p>
-  </section>"""
-
-    def render_callout(self, content):
-        return f"""
-  <!-- 极简引言卡 -->
-  <section style="background:#F8FAFC;border-left:3px solid #2563EB;padding:12px 16px;margin:16px 22px;border-radius:2px;box-sizing:border-box;">
-    <p style="margin:0;font-size:13.5px;color:#334155;line-height:1.65;text-align:justify;">{content}</p>
-  </section>"""
-
-
-# 注册所有风格
+# 注册内置风格（对外仅展示正式风格）
 STYLES_REGISTRY = {
     "editorial": EditorialStyle(),
-    "dakan": EditorialStyle(),
-    "minimal": MinimalStyle(),
-    "base": BaseStyle()
+}
+
+# 兼容别名映射（静默兼容，不对外作为独立风格暴露）
+STYLE_ALIASES = {
+    "dakan": "editorial",
+    "base": "editorial",
 }
 
 def load_external_styles():
@@ -369,7 +342,7 @@ def load_external_styles():
                         STYLES_REGISTRY[inst.name.lower()] = inst
                     for attr_name in dir(mod):
                         attr = getattr(mod, attr_name)
-                        if isinstance(attr, type) and issubclass(attr, BaseStyle) and attr not in (BaseStyle, EditorialStyle, MinimalStyle):
+                        if isinstance(attr, type) and issubclass(attr, BaseStyle) and attr not in (BaseStyle, EditorialStyle):
                             inst = attr()
                             STYLES_REGISTRY[inst.name.lower()] = inst
             except Exception as e:
@@ -379,7 +352,10 @@ load_external_styles()
 
 def get_style(style_name="editorial"):
     load_external_styles()
-    return STYLES_REGISTRY.get(style_name.lower(), STYLES_REGISTRY["editorial"])
+    key = style_name.lower()
+    if key in STYLE_ALIASES:
+        key = STYLE_ALIASES[key]
+    return STYLES_REGISTRY.get(key, STYLES_REGISTRY["editorial"])
 
 
 # ==============================================================================
@@ -596,12 +572,6 @@ def render_markdown_to_wechat_html(md_file_path, out_html_path, out_preview_path
             btn_bg = "#E0DEA8"
             btn_color = "#000000"
             btn_hover = "#CECB92"
-        elif 'minimal' in s_lower:
-            bar_bg = "rgba(30, 41, 59, 0.95)"
-            bar_shadow = "0 8px 24px rgba(37,99,235,0.2)"
-            btn_bg = "#2563EB"
-            btn_color = "#FFFFFF"
-            btn_hover = "#1D4ED8"
         elif 'editorial' in s_lower:
             bar_bg = "rgba(8, 40, 94, 0.95)"
             bar_shadow = "0 8px 24px rgba(8,40,94,0.25)"

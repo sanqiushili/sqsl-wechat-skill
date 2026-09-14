@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/version-1.0.0-2563EB.svg?style=flat-square" alt="Version 1.0.0"/>
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+"/>
   <img src="https://img.shields.io/badge/WeChat-Draft%20API-07C160?style=flat-square&logo=wechat&logoColor=white" alt="WeChat Draft API"/>
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="MIT License"/>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Personal%20Free%20%7C%20Commercial%20Contact-blue.svg?style=flat-square" alt="License"/></a>
 </p>
 
 [简体中文](README.md) | English
@@ -21,7 +21,7 @@
 2. **First-Image-as-Cover**: Automatically scans and extracts the very first image in your Markdown article (local path, web URL, or Base64), uploads it to WeChat permanent materials, and sets it as the 900×383 header cover.
 3. **Automated WeChat CDN Re-hosting**: Scans all in-text images and re-hosts them to WeChat CDN (`media/uploadimg`), automatically replacing URLs with `mmbiz.qpic.cn`.
 4. **1-Click Official Draft API Publishing**: Directly pushes formatted rich-text articles to your WeChat Official Account Draft Box (`draft/add`), ready for mobile review and broadcast.
-5. **Pluggable Multi-Style Engine**: Built-in `editorial` (Magazine) and `minimal` (Modern clean) styles, with an extensible Python class registry (`STYLES_REGISTRY`).
+5. **Pluggable Multi-Style Engine**: Built-in `editorial` (Editorial Magazine) and `olive_artisan` (Olive Artisan Lifestyle) styles, with an extensible Python class registry (`STYLES_REGISTRY`).
 
 ---
 
@@ -78,6 +78,7 @@ python3 scripts/wechat_draft_publisher.py "sample_editorial_article_微信排版
 
 ---
 
-## 📄 License
+## 📄 License & Commercial Inquiries
 
-MIT License. Feel free to use, star, and contribute!
+Dual-license model (Free for Article Typesetting & Publishing / Commercial Product Integration & Bespoke Customization).  
+For commercial inquiries or bespoke brand styling, please contact **leeguiyu@qq.com**. See [LICENSE](LICENSE) for details.

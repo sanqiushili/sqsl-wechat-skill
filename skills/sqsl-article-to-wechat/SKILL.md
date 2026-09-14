@@ -2,7 +2,7 @@
 name: sqsl-article-to-wechat
 description: |
   通用微信公众号文章排版与草稿箱直推系统。
-  1. 多风格排版架构：首发内置 SQSL Editorial 杂志大刊风（Didot/宋体 水印标题图层、88% 留白图片容器、墨蓝质感）及极简现代风，支持持续扩充新风格；
+  1. 多风格排版架构：首发内置先锋大刊风（editorial，Didot/宋体 水印标题图层、88% 留白图片容器、墨蓝质感）及阿芋·草木山野生活大刊风（olive_artisan），支持持续扩充新风格；
   2. 首图自动封面：自动提取正文中的第一张图片上传微信永久素材库作为头条封面，支持手动覆盖与无图兜底；
   3. 全 Markdown 语法支持：支持标题、代码块、表格、Quote 引言卡、列表、行内标注等；
   4. 微信公众平台闭环直推：自动图床转存、接口直推后台草稿箱、并生成带一键复制的本地预览网页。
@@ -25,8 +25,8 @@ flowchart TD
 
     subgraph StyleEngine["2. 多风格排版引擎"]
         B --> C{"选择风格 (--style)"}
-        C -->|默认| D1["SQSL Editorial 杂志大刊风 (editorial)\n- Didot/宋体 Retina 渐变透明标题图层\n- 88% 留白图片卡片\n- 墨蓝与橙金质感"]
-        C -->|可选| D2["极简商务现代风 (minimal)\n- 极简条带章节标\n- 清爽阅读间距"]
+        C -->|默认| D1["Editorial 先锋大刊风 (editorial)\n- Didot/宋体 Retina 渐变透明标题图层\n- 88% 留白图片卡片\n- 墨蓝与橙金质感"]
+        C -->|可选| D2["阿芋·草木生活大刊风 (olive_artisan)\n- Bodoni 艺术数字 01/02\n- 黄绿胶带高亮大标题\n- 燕麦米灰软卡片"]
         C -->|扩展| D3["可随时插拔新增更多风格"]
     end
 
@@ -90,11 +90,11 @@ flowchart TD
 ### 2. 指定不同排版风格
 可以通过 `--style` 指定排版风格：
 * `editorial`（默认）：先锋大刊风（Didot 衬线大水印 + 中文宋体标题图层、88% 留白插图、重点引言卡）；
-* `minimal`：极简现代商务风（清爽排版、几何条带章节标、适合技术与干货分享）。
+* `olive_artisan`：阿芋 · 草木山野生活大刊风（Bodoni 艺术数字 01/02、黄绿胶带高亮大标题、温润燕麦米灰软卡片、1.8 呼吸行高）。
 
 例如：
 ```text
-/sqsl-article-to-wechat 请用极简风格 (minimal) 排版这篇文章：[文章内容]
+/sqsl-article-to-wechat 用 olive_artisan 风格排版 docs/post.md
 ```
 
 ---

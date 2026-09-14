@@ -19,6 +19,12 @@ tmp/
 *.jpg
 *.jpeg
 *.svg
+!assets/*
+!examples/*.md
+!examples/*.jpg
+!examples/*.png
+*_微信排版.html
+*_预览.html
 
 # 系统与 IDE 文件
 .DS_Store

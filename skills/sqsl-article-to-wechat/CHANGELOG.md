@@ -9,8 +9,8 @@
 
 ### 🚀 初始版本发布 (Initial Release)
 - **多风格排版架构 (Multi-Style Registry)**：
-  - 首发内置 **SQSL Editorial 杂志大刊风 (`editorial`)**：搭载 Didot/宋体 双向交错渐变水印章节标题图层（无头 Chrome 动态生成）、88% 优雅留白图片卡片、重点引言卡与墨蓝/琥珀橙质感配色；
-  - 内置 **极简现代商务风 (`minimal`)**：清爽条带章节标与高紧凑性排版；
+  - 内置 **Editorial 先锋大刊风 (`editorial`)**：搭载 Didot/宋体 双向交错渐变水印章节标题图层（无头 Chrome 动态生成）、88% 优雅留白图片卡片、重点引言卡与墨蓝/琥珀橙质感配色；
+  - 内置 **阿芋·草木山野生活大刊风 (`olive_artisan`)**：Bodoni 艺术大数字插图图层（01/02）、黄绿胶带高亮大标题、温润燕麦米灰卡片与 1.8 舒适呼吸行高；
   - 模块化风格注册机制（`STYLES_REGISTRY`），方便随时扩展与插拔新风格。
 - **正文首图自适应封面 (First-Image-as-Cover)**：
   - 自动扫描并提取 Markdown / HTML 中的第一张插图（支持本地路径、网络 URL 自动下载、Base64 自动解码）；

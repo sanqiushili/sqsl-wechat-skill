@@ -7,7 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-2563EB.svg?style=flat-square" alt="Version 1.0.0"/>
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+"/>
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="MIT License"/>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Personal%20Free%20%7C%20Commercial%20Contact-blue.svg?style=flat-square" alt="License"/></a>
 </p>
 
 [简体中文](README.md) | English
@@ -39,6 +39,7 @@ python3 scripts/clone_wechat_style.py "https://mp.weixin.qq.com/s/xxx" --name "t
 
 ---
 
-## 📄 License
+## 📄 License & Commercial Inquiries
 
-MIT License.
+Dual-license model (Free for Article Typesetting & Publishing / Commercial Product Integration & Bespoke Customization).  
+For commercial inquiries or bespoke brand styling, please contact **leeguiyu@qq.com**. See [LICENSE](LICENSE) for details.

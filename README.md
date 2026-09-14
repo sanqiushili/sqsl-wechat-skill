@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+"/>
   <img src="https://img.shields.io/badge/Target-WeChat%20Official%20Account-07C160?style=flat-square&logo=wechat&logoColor=white" alt="WeChat Official Account"/>
   <img src="https://img.shields.io/badge/Architecture-Monorepo-orange.svg?style=flat-square" alt="Monorepo"/>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License MIT"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Personal%20Free%20%7C%20Commercial%20Contact-blue.svg?style=flat-square" alt="License"/></a>
 </p>
 
 <p align="center">
@@ -29,7 +29,34 @@
 
 ---
 
-## 🏗️ 架构全景与工作流
+## 🎨 核心排版风格样例展厅 (Style Gallery)
+
+SQSL 内置杂志大刊级排版美学风格，所有风格均采用**微信内联样式引擎**与 **Retina 级视觉图层**渲染，排版零杂色污染、零格式损耗，支持直接推送微信草稿箱或在浏览器中一键无损复制：
+
+| 风格名称 | 风格参数 | 视觉 DNA 与特征 | 核心色调 | 推荐场景 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Editorial**<br>*(先锋大刊风)* | `--style editorial` | Didot 艺术大水印 (`PART 01`)、宋体高对比中文、88% 黄金留白画幅、微阴影卡片 | `#08285E`<br>`#EA580C` | 深度行业洞见、先锋思想长文、科技与设计大刊 |
+| **阿芋 · 草木生活**<br>*(生活美学大刊)* | `--style olive_artisan` | Bodoni 粗斜体艺术数字 (`01`/`02`)、黄绿胶带高亮大标题、温润燕麦米灰卡片、1.8 呼吸行高 | `#2B2F23`<br>`#E0DEA8` | 人物专访、山野户外、手作匠人、旅行随笔 |
+
+<br/>
+
+<div align="center">
+
+### 1. 🏛️ `editorial` · 先锋大刊风（默认核心）
+<p align="center"><em>Didot 艺术大水印 · 宋体高对比中文 · 88% 黄金留白画幅 · 经典沉静墨蓝</em></p>
+
+<img src="assets/preview_editorial.png" alt="先锋大刊风样例" width="680" style="max-width: 100%; border-radius: 12px;" />
+
+<br/><br/>
+
+### 2. 🌿 `olive_artisan` · 阿芋 · 草木山野生活大刊风
+<p align="center"><em>Bodoni 粗斜体艺术大数字（01/02）· 黄绿胶带高亮居中大标题 · 燕麦米灰软卡片 · 1.8 极适呼吸行高</em></p>
+
+<img src="assets/preview_olive_artisan.png" alt="阿芋 · 草木山野生活风样例" width="680" style="max-width: 100%; border-radius: 12px;" />
+
+</div>
+
+---
 
 ```mermaid
 flowchart TD
@@ -48,7 +75,7 @@ flowchart TD
         end
 
         subgraph Sub2["skills/sqsl-article-to-wechat (排版直推引擎)"]
-            Pool["公共风格池 (styles/)\n- editorial (先锋大刊风)\n- minimal (极简商务风)\n- olive_artisan (草木生活风)"]
+            Pool["公共风格池 (styles/)\n- editorial (先锋大刊风)\n- olive_artisan (草木生活大刊风)"]
             MD["Markdown 解析与渲染"]
             Cover["首图自适应 900x383 封面"]
             CDN["正文图片自动转存微信 CDN"]
@@ -89,9 +116,7 @@ sqsl-wechat-skill/                            # GitHub 唯一根仓库
     │   │   ├── render_wechat_html.py         # 多风格 Markdown 渲染器
     │   │   └── wechat_draft_publisher.py     # 首图封面提取、CDN转存与草稿直推
     │   ├── styles/                           # 动态热加载风格池
-    │   │   ├── style_editorial.py            # SQSL Editorial 杂志大刊风
-    │   │   ├── style_minimal.py              # 极简现代商务风
-    │   │   └── style_olive_artisan.py        # 阿芋·草木山野生活大刊风
+    │   │   └── style_olive_artisan.py        # 阿芋·草木山野生活大刊风 (内置 editorial 先锋大刊风)
     │   ├── templates/
     │   ├── references/
     │   │   ├── editorial_inspiration.md      # 大刊排版美学灵感
@@ -175,8 +200,8 @@ npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 
 ### 🎨 内置核心风格的灵感溯源
 
-1. **`editorial`（SQSL 先锋大刊风）**：
-   - 汲取自 *Nowre*、*GQ* 等潮流大刊，采用 Didot / 宋体水印标题图层、88% 留白图片容器与深邃墨蓝先锋质感；
+1. **`editorial`（先锋大刊风）**：
+   - 逆向解构自 *ELLE* 杂志深度专栏名篇[《把“蓝色”交给 JISOO，她会怎么穿？》](https://mp.weixin.qq.com/s/63NfcghNomURBgBxyjIxGw)，复刻了其标志性的 Didot / 宋体水印标题图层（双向交错渐变 `PART` 与数字 `01`/`02`）、88% 黄金留白画幅与深邃墨蓝先锋质感；
 2. **`olive_artisan`（阿芋 · 草木山野生活大刊风）**：
    - 逆向解构自 *Voicer* 杂志深度专访名篇[《重访阿芋：是制帽师，也是山野里的自在风》](https://mp.weixin.qq.com/s/2a85ue2uWT9JJpIcTqYYvA)，1:1 像素级还原了标志性的 Bodoni/Didot 粗斜体艺术大数字插图图层（`01`/`02`）、黄绿胶带高亮居中大标题（`#E0DEA8`）、温润燕麦米灰软卡片（`#F7F6F3`）以及极为松弛的 1.8 舒适行高与 1.5px 呼吸字距。
 
@@ -186,6 +211,21 @@ npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-article-to-wechat -g
 
 ---
 
-## 📄 开源许可证
+## 📄 许可证与商业定制 (License & Commercial Use)
 
-本项目基于 [MIT License](LICENSE) 开源。欢迎 Star、Fork 与贡献你的精彩排版风格！
+本项目采用 **双重授权模式（免费使用 / 商业集成授权与定制）**：
+
+### 1. ✍️ 免费用于文章排版 (Free for Typesetting)
+- **排版完全免费**：无论个人创作者、自媒体博主还是企业机构，均可**免费**使用本工具进行日常公众号文章的排版、样式生成与草稿推送。
+
+### 2. 🏢 商业使用界定 (Commercial Definition)
+- **商业使用范围**：**仅限于**将本项目的排版引擎、风格类代码或整个 Skill 打包集成进商业化 SaaS 平台、商业 APP、收费小程序或商用软件工具中；
+- 若涉及上述商业产品集成，需事先与作者沟通取得正式商业授权。
+
+### 3. 🎨 品牌风格定制与技术支持 (Customization Services)
+面向有更高审美与工程化需求的企业与品牌，我们提供专属定制服务：
+- 🎨 **品牌专属视觉定制**：定制专属品牌色卡与字体排印系统；
+- 🛠️ **专属排版组件开发**：特殊数据表格、SVG 动态交互卡片、专属品牌水印；
+- 🚀 **自动化流水线私有化交付**：对接飞书文档、语雀、Notion 等团队知识库，实现多平台自动化排版直推公众号。
+
+> 🤝 **商业合作与风格定制咨询**：欢迎联系邮箱 **[leeguiyu@qq.com](mailto:leeguiyu@qq.com)**，或通过 [GitHub Issues](https://github.com/sanqiushili/sqsl-wechat-skill/issues) 留言。详情参见 [LICENSE](LICENSE)。

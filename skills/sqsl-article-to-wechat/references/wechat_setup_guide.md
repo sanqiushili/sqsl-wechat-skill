@@ -71,9 +71,9 @@ export WECHAT_APPSECRET="你的微信公众号AppSecret"
   ```text
   /sqsl-article-to-wechat 帮我把 docs/my_article.md 排版并发到公众号草稿箱
   ```
-* **指定极简现代风**：
+* **指定草木生活大刊风**：
   ```text
-  /文章发公众号 用 minimal 风格排版 docs/my_article.md
+  /文章发公众号 用 olive_artisan 风格排版 docs/my_article.md
   ```
 * **直接粘贴文稿内容**：
   ```text
@@ -96,8 +96,8 @@ export WECHAT_APPSECRET="你的微信公众号AppSecret"
 # 生成大刊风 (editorial)
 python3 scripts/render_wechat_html.py "你的文章.md" --style editorial
 
-# 生成极简风 (minimal)
-python3 scripts/render_wechat_html.py "你的文章.md" --style minimal
+# 生成阿芋·草木生活大刊风 (olive_artisan)
+python3 scripts/render_wechat_html.py "你的文章.md" --style olive_artisan
 ```
 *生成两个文件：`你的文章_微信排版.html`（内联样式版）与 `你的文章_预览.html`（浏览器预览版）。*
 

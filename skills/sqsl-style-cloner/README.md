@@ -8,7 +8,7 @@
   <a href="VERSION"><img src="https://img.shields.io/badge/version-1.0.0-2563EB.svg?style=flat-square" alt="Version 1.0.0"/></a>
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.9+"/>
   <img src="https://img.shields.io/badge/Target-WeChat%20Articles-07C160?style=flat-square&logo=wechat&logoColor=white" alt="WeChat Articles"/>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License MIT"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Personal%20Free%20%7C%20Commercial%20Contact-blue.svg?style=flat-square" alt="License"/></a>
 </p>
 
 <p align="center">
@@ -67,7 +67,7 @@ npx -y skills add sanqiushili/sqsl-wechat-skill/skills/sqsl-style-cloner -g
 python3 scripts/clone_wechat_style.py "https://mp.weixin.qq.com/s/xxx" --name "geek_blue" --display-name "极客深蓝风"
 
 # 从本地 HTML 片段克隆
-python3 scripts/clone_wechat_style.py "examples/sample_wechat_article.html" --name "emerald_forest" --display-name "翡翠森林风"
+python3 scripts/clone_wechat_style.py "examples/sample_wechat_article.html" --name "urban_chic" --display-name "都市摩登风"
 ```
 
 ---
@@ -86,6 +86,7 @@ python3 ../sqsl-article-to-wechat/scripts/render_wechat_html.py "我的文章.md
 
 ---
 
-## 📄 开源许可证
+## 📄 开源许可证与商业定制
 
-MIT License.
+本项目采用双重授权模式（文章排版完全免费 / 商业产品集成授权与专属定制）。
+如有商业产品集成或品牌定制需求，请联系 **leeguiyu@qq.com**。详见根目录 [LICENSE](../../LICENSE)。

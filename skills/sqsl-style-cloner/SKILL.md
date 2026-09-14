@@ -37,7 +37,7 @@ flowchart TD
 **引导内容**：
 1. **这是什么**：只要你看到别人家公众号排版好看，把链接发给我，我就能帮你把它的配色与排版风格“复刻克隆”下来；
 2. **怎么用**：发送 `/sqsl-style-cloner https://mp.weixin.qq.com/s/...` 或直接发送文章链接并说“克隆这个排版”；
-3. **克隆后在哪**：克隆完成后会自动生成一个风格代号（如 `emerald_forest`），并自动注册到 `sqsl-article-to-wechat`；
+3. **克隆后在哪**：克隆完成后会自动生成一个风格代号（如 `urban_chic`），并自动注册到 `sqsl-article-to-wechat`；
 4. **如何使用新风格**：克隆后，在排版文章时直接使用 `--style 你的风格代号` 即可完美调用！
 
 ---
@@ -132,6 +132,6 @@ flowchart TD
 python3 scripts/clone_wechat_style.py "https://mp.weixin.qq.com/s/xxx" --name "cool_gray" --display-name "冷灰极简风"
 
 # 从本地 HTML 片段克隆
-python3 scripts/clone_wechat_style.py "examples/sample_wechat_article.html" --name "emerald_forest" --display-name "翡翠森林风"
+python3 scripts/clone_wechat_style.py "examples/sample_wechat_article.html" --name "urban_chic" --display-name "都市摩登风"
 ```
 

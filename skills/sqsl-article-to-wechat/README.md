@@ -65,7 +65,7 @@ npx -y skills update sqsl-article-to-wechat
 
 ## 🎨 视觉灵感与装帧美学 (Aesthetic Heritage)
 
-本项目的核心风格 **`SQSL Editorial（先锋大刊风）`** 汲取自 **NOWRE、Monocle、Kinfolk** 等国内外顶尖时尚与设计出版物的高级装帧体例：
+本项目的核心风格 **`Editorial（先锋大刊风）`** 逆向解构自 **ELLE** 时尚大刊名篇[《把“蓝色”交给 JISOO，她会怎么穿？》](https://mp.weixin.qq.com/s/63NfcghNomURBgBxyjIxGw)的高级装帧体例：
 
 * **Didot 衬线大水印 + 中文高对比宋体**：上层 `PART` 渐变下沉，下层数字 `01/02` 渐变上抬，与居中的高对比宋体主标题纵深交织；
 * **Retina 级免过滤图层渲染**：系统在后台调用无头 Chrome，将渐变交织的水印标题自动渲染为高精度透明图层嵌入 HTML，100% 免疫微信编辑器的样式清洗；
@@ -74,13 +74,24 @@ npx -y skills update sqsl-article-to-wechat
 
 > 📖 详见设计美学白皮书：[references/editorial_inspiration.md](references/editorial_inspiration.md)
 
+### 📸 内置排版风格样例预览
+
+<div align="center">
+
+| 🏛️ `editorial` (先锋大刊风) | 🌿 `olive_artisan` (草木生活大刊风) |
+| :---: | :---: |
+| <img src="assets/preview_editorial.png" width="340" alt="Editorial 风格样例" /> | <img src="assets/preview_olive_artisan.png" width="340" alt="Olive Artisan 风格样例" /> |
+| **Didot 水印 · 宋体中文 · 墨蓝先锋** | **Bodoni 艺术数字 · 胶带高亮 · 燕麦卡片** |
+
+</div>
+
 ---
 
 ## 🚀 核心特性
 
 | 特性 | 传统排版流程 | SQSL Article to WeChat |
 | :--- | :--- | :--- |
-| **排版风格** | 纯静态模板或单一组件 | **多风格可插拔架构**（内置大刊风 `editorial` 与极简风 `minimal`） |
+| **排版风格** | 纯静态模板或单一组件 | **多风格可插拔架构**（内置先锋大刊风 `editorial` 与草木生活大刊风 `olive_artisan`） |
 | **头条封面** | 需人工切图 900×383 并手动上传 | **自动识别正文首图** 裁剪上传素材库（支持本地图/网络图/Base64/文字兜底） |
 | **图床管理** | 需在后台手动逐张上传图片 | **全自动上传微信 CDN (`media/uploadimg`)** 并替换为 `mmbiz.qpic.cn` 链接 |
 | **发布推送** | 需手动在网页端全选复制粘贴 | **调用微信官方 API (`draft/add`) 一键直推草稿箱**，手机即可一键群发 |
@@ -99,8 +110,8 @@ flowchart TD
 
     subgraph StyleEngine["2. 多风格排版引擎 (render_wechat_html.py)"]
         B --> StyleSel{"风格选择 (--style)"}
-        StyleSel -->|默认| S1["SQSL Editorial 杂志大刊风\n- Didot/宋体 渐变标题图层\n- 88% 留白图片容器\n- 墨蓝与质感强调色"]
-        StyleSel -->|可选| S2["极简现代商务风 (minimal)\n- 条带章节标\n- 紧凑高密度排版"]
+        StyleSel -->|默认| S1["Editorial 先锋大刊风\n- Didot/宋体 渐变标题图层\n- 88% 留白图片容器\n- 墨蓝与质感强调色"]
+        StyleSel -->|可选| S2["阿芋·草木生活大刊风 (olive_artisan)\n- Bodoni 粗斜体艺术数字\n- 胶带高亮居中大标题\n- 燕麦米灰软卡片"]
         StyleSel -->|扩展| S3["自定义风格插件注册 (STYLES_REGISTRY)"]
     end
 
@@ -124,7 +135,7 @@ sqsl-article-to-wechat/
 ├── README.en.md                       # 项目说明文档（English）
 ├── VERSION                            # 语义化版本号文件 (v1.0.0)
 ├── CHANGELOG.md                       # 详细版本迭代记录
-├── LICENSE                            # MIT 开源许可证
+├── LICENSE                            # 双重授权开源许可证
 ├── SKILL.md                           # AI Agent 技能配置说明书
 ├── wechat_config.template.json        # 微信凭证配置模板
 ├── .gitignore                         # Git 忽略配置（防止凭证泄露）
@@ -205,12 +216,13 @@ python3 scripts/wechat_draft_publisher.py "sample_editorial_article_微信排版
 ```
 或
 ```text
-/文章发公众号 用 minimal 风格排版这篇文章并推送到微信后台。
+/文章发公众号 用 olive_artisan 风格排版这篇文章并推送到微信后台。
 ```
 
 ---
 
-## 📄 开源许可证
+## 📄 开源许可证与商业定制
 
-本项目基于 [MIT License](LICENSE) 开源。
+本项目采用双重授权模式（文章排版完全免费 / 商业产品集成授权与专属定制）。
+如有商业产品集成或品牌定制需求，请联系 **leeguiyu@qq.com**。详见根目录 [LICENSE](../../LICENSE)。
 欢迎 Fork、Star 与提交 PR！
