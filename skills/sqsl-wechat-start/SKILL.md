@@ -20,12 +20,15 @@ description: |
 flowchart TD
     User["用户输入 (/sqsl-wechat-start)"] --> Router{"意图识别总路由 (/sqsl-wechat-start)"}
     
+    Router -->|输入视频文件 .mp4/.mov / 视频转写| VideoToArticle["🎬 sqsl-video-to-article (视频转文章引擎)\n- 本地 Whisper 极速转写 + 词典纠错\n- 依据字幕时间戳精准截取高清帧\n- 还原创作者口吻撰写图文 Markdown"]
+
     Router -->|输入微信文章 URL / 要求提取样式| Cloner["🎨 sqsl-style-cloner (风格克隆工坊)\n- 逆向解析目标文章 CSS/调色板\n- 提取大标题图片序号与胶带高亮底色\n- 自动编译并注入公共风格池"]
     
     Router -->|输入 Markdown 文档 / 要求排版发布| Publisher["📰 sqsl-article-to-wechat (排版直推引擎)\n- 多风格高水准杂志排版 (大刊风/极简风/手作风)\n- 自动提取正文首图为 900x383 头条封面\n- 图片全自动转存微信官方 CDN\n- 官方草稿箱 API 一键直推 + 本地预览复制"]
     
     Router -->|输入 '使用引导' / '新手' / '帮助'| Guide["📖 全景引导与微信 API 5步配置说明"]
     
+    VideoToArticle -->|生成 Markdown 文章草稿| Publisher
     Cloner -->|克隆出新风格 style_{name}.py| Publisher
 ```
 
@@ -52,21 +55,33 @@ flowchart TD
   - 自动编译生成新风格模块并注册进 `sqsl-article-to-wechat/styles/`；
   - 任务完成后主动提示用户：“已为您克隆出新风格 `{style_name}`，是否立即用该风格排版您的文章？”
 
+### 意图 4：本地视频素材转图文文章
+* **触发特征**：提供了本地视频文件路径（`.mp4`、`.mov`）或包含「视频转文章」「视频转写」「把视频整理成文章」「视频转图文」；
+* **动作**：无缝调用 **`sqsl-video-to-article`** 子技能：
+  - 提取音频并调用本地 Whisper 极速转写；
+  - 载入专有词典自动修正错别字与黑话；
+  - 依据字幕时间戳精准截取高清帧并校验；
+  - 还原创作者第一人称口吻撰写图文 Markdown；
+  - 任务完成后主动提示用户：“已为您生成 Markdown 文章草稿与配图，是否立即调用 `sqsl-article-to-wechat` 进行杂志级排版并直推微信草稿箱？”
+
 ---
 
 ## 📖 新手全景指引（用户说“使用引导”时输出）
 
 > ### 欢迎使用 SQSL 微信公众号创作全家桶！
 > 
-> 本全家桶专为微信公众号创作者打造，提供从**「风格复刻」**到**「高颜值排版」**再到**「官方草稿箱直推」**的全链路闭环：
+> 本全家桶专为微信公众号创作者打造，提供从**「视频转图文」**到**「风格复刻」**再到**「高颜值排版」**与**「官方草稿箱直推」**的全链路闭环：
 > 
-> 1. **想排版发布文稿？**
+> 1. **有视频素材想转写成文章？**
+>    - 发送：`/sqsl-wechat-start 把这个视频整理成文章：video.mp4`（或简写 `/sqsl`）
+>    - 或发送：`/sqsl-video-to-article video.mp4`
+> 2. **想排版发布现有文稿？**
 >    - 发送：`/sqsl-wechat-start 帮我排版 docs/my_post.md 并推送到公众号`（或简写 `/sqsl`）
->    - 或发送：`/sqsl-article-to-wechat docs/my_post.md --style olive_artisan`
-> 2. **看到别人家排版好看，想据为己有？**
+>    - 或发送：`/sqsl-article-to-wechat docs/my_post.md --style editorial`
+> 3. **看到别人家排版好看，想据为己有？**
 >    - 发送：`/sqsl-wechat-start 帮我克隆这篇公众号排版：https://mp.weixin.qq.com/s/...`
 >    - 或发送：`/sqsl-style-cloner https://mp.weixin.qq.com/s/... --name my_style`
-> 3. **如何配置微信官方 API（5步极速配置）**：
+> 4. **如何配置微信官方 API（5步极速配置）**：
 >    - 登录微信开发者平台：`https://developers.weixin.qq.com/`
 >    - 首页下方「我的业务」找到公众号 ➔「基础能力」➔「开发秘钥」复制 `AppID` 并保存 `AppSecret`；
 >    - 同区域找到「IP 白名单」，将本机公网 IP（终端运行 `curl cip.cc`）添加进去；

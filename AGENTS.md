@@ -11,6 +11,7 @@
 | 技能名称 | 目录位置 | 角色定位 |
 | :--- | :--- | :--- |
 | **`sqsl-wechat-start`** | `skills/sqsl-wechat-start/SKILL.md` | **总路由入口**：负责任务前路由与任务后导航（支持 `/sqsl` 简写） |
+| **`sqsl-video-to-article`** | `skills/sqsl-video-to-article/SKILL.md` | **视频转文章引擎**：本地 Whisper 转写、词典纠错、时间戳精准抽帧并撰写 Markdown 初稿 |
 | **`sqsl-article-to-wechat`** | `skills/sqsl-article-to-wechat/SKILL.md` | **排版发布引擎**：Markdown 转公众号 HTML 并直推草稿箱 |
 | **`sqsl-style-cloner`** | `skills/sqsl-style-cloner/SKILL.md` | **风格克隆工坊**：逆向解析微信文章并生成风格模块 |
 

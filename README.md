@@ -23,9 +23,10 @@
 传统的微信公众号排版工具（微信自带编辑器、第三方排版网站）操作繁琐、格式经常错乱、难以批量自动化。
 
 **SQSL WeChat Skill** 将微信内容生产全流程拆解为标准化、可插拔的 Agent 技能矩阵：
-1. **🎨 风格克隆工坊 (`sqsl-style-cloner`)**：只要你看到别人家公众号排版好看，发来链接，自动逆向解析其视觉 DNA（大标题艺术数字图片、胶带高亮底色、燕麦米灰卡片、字距呼吸感），生成可插拔风格；
-2. **📰 排版直推引擎 (`sqsl-article-to-wechat`)**：Markdown 文档一键渲染为高颜值内联 HTML，自动提取正文首图为 900×383 头条封面，插图自动转存微信官方 CDN，接口直推后台草稿箱，手机端一键审核群发；
-3. **🧭 智能总调度路由 (`sqsl-wechat-start`)**：类似 `/dbs`，一个统一入口（`/sqsl-wechat-start` 或简写 `/sqsl`），发文章自动排版，发链接自动克隆，说引导自动导航！
+1. **🎬 视频转文章引擎 (`sqsl-video-to-article`)**：输入本地视频，本地 Whisper 极速转写，专有词典自动纠错，根据字幕时间戳精准截取高清帧，高度保留作者第一人称原汁原味撰写图文 Markdown；
+2. **🎨 风格克隆工坊 (`sqsl-style-cloner`)**：只要你看到别人家公众号排版好看，发来链接，自动逆向解析其视觉 DNA（大标题艺术数字图片、胶带高亮底色、燕麦米灰卡片、字距呼吸感），生成可插拔风格；
+3. **📰 排版直推引擎 (`sqsl-article-to-wechat`)**：Markdown 文档一键渲染为高颜值内联 HTML，自动提取正文首图为 900×383 头条封面，插图自动转存微信官方 CDN，接口直推后台草稿箱，手机端一键审核群发；
+4. **🧭 智能总调度路由 (`sqsl-wechat-start`)**：类似 `/dbs`，一个统一入口（`/sqsl-wechat-start` 或简写 `/sqsl`），输入视频转文章，发文章自动排版，发链接自动克隆，说引导自动导航！
 
 ---
 
@@ -61,6 +62,7 @@ SQSL 内置杂志大刊级排版美学风格，所有风格均采用**微信内�
 ```mermaid
 flowchart TD
     subgraph Client["用户与 Agent 交互层"]
+        Cmd0["/sqsl-video-to-article (视频转文章)"]
         Cmd1["/sqsl-wechat-start (或简写 /sqsl)"]
         Cmd2["/sqsl-article-to-wechat (排版直推)"]
         Cmd3["/sqsl-style-cloner (风格克隆)"]
@@ -69,6 +71,12 @@ flowchart TD
     subgraph Suite["SQSL 技能矩阵 (Monorepo)"]
         Router["skills/sqsl-wechat-start\n总路由器 (智能意图分流与状态导航)"]
         
+        subgraph Sub0["skills/sqsl-video-to-article (视频转文章引擎)"]
+            Whisper["本地 Whisper 硬件加速转写"] --> Glossary["专有词典 ASR 自动纠错"]
+            Glossary --> Frame["依据 SRT 时间戳精准抽帧校验"]
+            Frame --> DraftMD["还原作者口吻撰写图文 Markdown"]
+        end
+
         subgraph Sub1["skills/sqsl-style-cloner (风格克隆工坊)"]
             Crawler["网页爬取与 DOM 提取"] --> Analyzer["视觉 DNA 逆向分析\n- 胶带高亮底色探测\n- 章节序号图片化 (01/02)\n- 零杂色渗透法则"]
             Analyzer --> Compiler["动态编译风格类 style_{name}.py"]
@@ -83,9 +91,12 @@ flowchart TD
         end
     end
 
+    Cmd0 --> Sub0
     Cmd1 --> Router
+    Router -->|输入视频/整理成文| Sub0
     Router -->|发文章/Markdown| Sub2
     Router -->|发链接/学排版| Sub1
+    DraftMD -->|无缝流转排版| Sub2
     Compiler -->|新风格自动注入| Pool
     Pool --> MD
     MD --> Cover & CDN --> Draft --> Output["📱 手机微信公众平台助手收到新草稿"]
@@ -110,7 +121,15 @@ sqsl-wechat-skill/                            # GitHub 唯一根仓库
     ├── sqsl-wechat-start/                    # 1. 家族总路由主技能 (/sqsl-wechat-start 或 /sqsl)
     │   └── SKILL.md
     │
-    ├── sqsl-article-to-wechat/               # 2. 排版与微信草稿直推引擎
+    ├── sqsl-video-to-article/                # 2. 视频转图文文章生成引擎 (/sqsl-video-to-article)
+    │   ├── SKILL.md
+    │   ├── README.md
+    │   ├── scripts/
+    │   │   └── video_to_article.py           # 音频提取、Whisper转写、词典纠错与抽帧
+    │   └── references/
+    │       └── glossary.json                 # 常用专有名词与同音字纠错词典
+    │
+    ├── sqsl-article-to-wechat/               # 3. 排版与微信草稿直推引擎
     │   ├── SKILL.md
     │   ├── scripts/
     │   │   ├── render_wechat_html.py         # 多风格 Markdown 渲染器
@@ -124,7 +143,7 @@ sqsl-wechat-skill/                            # GitHub 唯一根仓库
     │   └── examples/
     │       └── sample_editorial_article.md   # 排版测试样例文章
     │
-    └── sqsl-style-cloner/                    # 3. 风格逆向与克隆工坊
+    └── sqsl-style-cloner/                    # 4. 风格逆向与克隆工坊
         ├── SKILL.md
         ├── scripts/
         │   └── clone_wechat_style.py         # 视觉 DNA 逆向提取与风格代码生成

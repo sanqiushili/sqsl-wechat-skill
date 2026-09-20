@@ -17,9 +17,10 @@
 
 ## 🌟 Matrix Highlights
 
-1. **🎨 `sqsl-style-cloner` (Style Cloner Workshop)**: Reverse-engineers the visual DNA of any WeChat article URL (extracting stylized number images `01/02`, highlight tape background colors, soft paper cards, line spacing) and compiles into a plug-and-play Python style class.
-2. **📰 `sqsl-article-to-wechat` (Typesetter & Draft Publisher)**: Turns any Markdown file into high-aesthetic WeChat HTML, auto-extracts the first image as 900x383 header cover, uploads images to WeChat CDN, and pushes directly to your Official Account Draft Box.
-3. **🧭 `sqsl-wechat-start` (Master Router)**: A unified entry point (`/sqsl-wechat-start` or shorthand `/sqsl`) that automatically identifies user intent and routes between publishing, cloning, and setup guides.
+1. **🎬 `sqsl-video-to-article` (Video-to-Article Engine)**: Locally transcribes video with Whisper, automatically post-processes terminology with a custom glossary, extracts precise frames via subtitle timestamps, and crafts authentic, first-person Markdown article drafts.
+2. **🎨 `sqsl-style-cloner` (Style Cloner Workshop)**: Reverse-engineers the visual DNA of any WeChat article URL (extracting stylized number images `01/02`, highlight tape background colors, soft paper cards, line spacing) and compiles into a plug-and-play Python style class.
+3. **📰 `sqsl-article-to-wechat` (Typesetter & Draft Publisher)**: Turns any Markdown file into high-aesthetic WeChat HTML, auto-extracts the first image as 900x383 header cover, uploads images to WeChat CDN, and pushes directly to your Official Account Draft Box.
+4. **🧭 `sqsl-wechat-start` (Master Router)**: A unified entry point (`/sqsl-wechat-start` or shorthand `/sqsl`) that automatically identifies user intent and routes between video transcription, publishing, cloning, and setup guides.
 
 ---
 
